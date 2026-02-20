@@ -17,3 +17,7 @@ terraform plan
 ```
 terraform destroy
 ```
+**It will create the infra without asking permission in run time**
+```
+terraform apply -auto-approve
+```
