@@ -5,3 +5,7 @@ ALL ABOUT IaaC (infra as a code )
 ```
 terrform init
 ```
+**It will give us a plan what we are going to do**
+```
+terraform plan
+```
