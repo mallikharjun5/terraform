@@ -13,3 +13,7 @@ terraform plan
 ```
 terraform plan
 ```
+**It will destroy the resources that we are created**
+```
+terraform destroy
+```
