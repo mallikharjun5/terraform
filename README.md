@@ -9,3 +9,7 @@ terrform init
 ```
 terraform plan
 ```
+**Creates the infra as per the plan**
+```
+terraform plan
+```
