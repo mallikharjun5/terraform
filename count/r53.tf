@@ -3,6 +3,6 @@ resource "aws_route53_record" "roboshop" {
   zone_id = var.zone_id
   name    = "${var.instances[count.index]}.${var.domain_name}"      #for eg mongobb.mallikharjundevops.fun
   type    = "A"
-  ttl     = 300
+  ttl     = 1
   records = [aws_eip.lb.public_ip]
 }
