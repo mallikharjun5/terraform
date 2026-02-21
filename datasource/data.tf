@@ -1,4 +1,4 @@
-data "aws_ami" "terraform" {
+data "aws_ami" "terraform-demo" {
     owners =    ["973714476881"]
     most_recent = true
 
@@ -18,6 +18,6 @@ filter {
 }
 }
 
-output "terraform" {
-  value = data.aws_ami.terraform.id
+output "terraform-demo" {
+  value = data.aws_ami.terraform.id         # querying the info of aws_ami
 }

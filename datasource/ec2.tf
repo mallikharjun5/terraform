@@ -1,10 +1,10 @@
-resource "aws_instance" "terraform" {
+resource "aws_instance" "terraform-demo" {
   ami           = data.aws_ami.terraform.id
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow-all-ports.id]
 
   tags = {
-    Name = "terraform"
+    Name = "terraform-demo"
   }
 }
 
