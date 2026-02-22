@@ -19,5 +19,5 @@ filter {
 }
 
 output "terraform-demo" {
-  value = data.aws_ami.terraform.id         # querying the info of aws_ami
+  value = data.aws_ami.terraform-demo.id        # querying the info of aws_ami
 }

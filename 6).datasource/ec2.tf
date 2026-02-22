@@ -1,5 +1,5 @@
 resource "aws_instance" "terraform-demo" {
-  ami           = data.aws_ami.terraform.id
+  ami           = data.aws_ami.terraform-demo.id
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow-all-ports.id]
 
