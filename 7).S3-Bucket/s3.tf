@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "roboshop" {
-  bucket = "roboshop-test-bucket"
+  bucket = "remote-state-malli"
   region = "us-east-1"
 
   tags = {
