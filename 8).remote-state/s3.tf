@@ -1,23 +1,27 @@
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "remote-state-malli"
+resource "aws_s3_bucket" "remote_state" {
+  for_each = toset(var.s3)
+
+  bucket = each.value
 
   tags = {
-    Name        = "Terraform Remote State"
-    Environment = "Dev"
+    Name = each.value
   }
 }
 
-
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.terraform_state.id
+  for_each = aws_s3_bucket.remote_state
 
-  versioning_configuration {                #Versioning = rollback protection
+  bucket = each.value.id
+
+  versioning_configuration {
     status = "Enabled"
   }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
-  bucket = aws_s3_bucket.terraform_state.id
+  for_each = aws_s3_bucket.remote_state
+
+  bucket = each.value.id
 
   rule {
     apply_server_side_encryption_by_default {
